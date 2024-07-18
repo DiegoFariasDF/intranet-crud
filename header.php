@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="slide.js" defer></script>
 </head>
 <body>
     <header>
-        <a href=""><img src="uploads/saaelogo.png" alt="logo"></a>
+        <a href=""><img src="uploads/saaelogo1.png" alt="logo"></a>
         <nav>
             <ul>
             <li><a href="?pagina=">HOME</a></li>
@@ -22,7 +23,7 @@
                 </ul>
             </li>
             <li><a href="?pagina=documentos">DOCUMENTOS</a></li>
-            <li><a href="">ARQUIVOS</a></li>
+            <li><a href="">ARQUIVOS</a></li>    
             <li><a href="?pagina=sobre">SOBRE</a></li>
             </ul>
             
