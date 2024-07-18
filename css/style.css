@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
+}
+
+ul {
+    list-style: none;
+    
+    
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    
+}
+
+
+ul li a::after {
+    content: " ";
+    width: 0%;
+    height: 2px;
+    background-color: #2773ff;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+  
+}
+  
+ul li a:hover::after{
+    width: 50%;
+}
+
+
+
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+.umsete{
+    width: 150px;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #4e4e4e;
+    position: absolute;
+    z-index: 999;
+    opacity: 0; /* Inicia com opacidade zero para esconder o submenu */
+    transition: opacity 0.5s ease; 
+    border-radius: 0 0 10px 10px;
+    pointer-events: none; /* submenu oculto sem interação */
+}
+
+ul li:hover ul.dropdown {
+    opacity: 1; 
+    pointer-events: auto; /*submenu visível */
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+
+header img{
+    height: 30px;
+    filter: drop-shadow(0 0 10px #fff);
+}
+
+.home{
+    height: 85vh;
+}
+
+.rodape{
+    background-color: black;
+    height: 5vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape img{
+    height: 25px;
+}
+
+.rodape p{
+    height: 26px;
+}
+
+.rodape a{
+    text-decoration: none;
+    color: #ccc4c4;
+    cursor: pointer;
+}
+
+
+
