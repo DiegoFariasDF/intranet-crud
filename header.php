@@ -25,6 +25,7 @@
             <li><a href="?pagina=documentos">DOCUMENTOS</a></li>
             <li><a href="">ARQUIVOS</a></li>    
             <li><a href="?pagina=sobre">SOBRE</a></li>
+            <li><a href="?pagina=login"><img src="uploads/usuario-branco.png"></a></li>
             </ul>
             
         </nav>

@@ -4,15 +4,45 @@
     include("db.php");
     include("header.php");
     #conteudo da pagina
+    /*
+    if(isset($_SESSION['login'])){
+    */
 
+   
+        if(isset($_GET['pagina'])){
+            $pagina = $_GET["pagina"];
+        }
+        else{
+            $pagina = 'home';
+        }
+    
+    /*}
 
-
-    if(isset($_GET['pagina'])){
-        $pagina = $_GET["pagina"];
-    }
     else{
         $pagina = 'home';
     }
+    */
+    
+
+    switch ($pagina){
+        case "comunicacao": include("views/comunicacao.php"); break;
+        case "documentos": include("views/documentos.php"); break;
+        case "sobre": include("views/sobre.php"); break;
+        case "gepe": include("views/gepe.php"); break;
+        case "obras": include("views/obras.php"); break;
+        case "orme": include("views/orme.php"); break;
+        case "uti": include("views/uti.php"); break;
+        case "login": include("views/login.php"); break;
+        default: include("views/home.php"); break;
+    }       
+
+    include("footer.php");
+
+
+
+    // Dicas - utilizar datatable para fazer search de tabelas, e bootstrap para estilizar
+
+    /*
     
     if($pagina == "comunicacao"){
         include("views/comunicacao.php");

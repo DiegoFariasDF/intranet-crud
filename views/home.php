@@ -1,5 +1,5 @@
 <div class="homee">
-    <section class="slider" id="home">
+    <section class="slider" id="home">        
 
         <div class="slider-content">
 
