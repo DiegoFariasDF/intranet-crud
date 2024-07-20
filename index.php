@@ -4,9 +4,6 @@
     include("db.php");
     include("header.php");
     #conteudo da pagina
-    /*
-    if(isset($_SESSION['login'])){
-    */
 
    
         if(isset($_GET['pagina'])){
@@ -16,12 +13,7 @@
             $pagina = 'home';
         }
     
-    /*}
-
-    else{
-        $pagina = 'home';
-    }
-    */
+    
     
 
     switch ($pagina){
@@ -32,7 +24,8 @@
         case "obras": include("views/obras.php"); break;
         case "orme": include("views/orme.php"); break;
         case "uti": include("views/uti.php"); break;
-        case "login": include("views/login.php"); break;
+        case "login": include("login.php"); break;
+        case "painel": include("painel.php"); break;
         default: include("views/home.php"); break;
     }       
 
