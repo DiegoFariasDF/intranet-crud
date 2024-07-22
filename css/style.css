@@ -67,7 +67,7 @@ ul li ul.dropdown li {
 }
 
 .umsete{
-    width: 150px;
+    width: 160px;
 }
 
 ul li ul.dropdown {
@@ -131,11 +131,12 @@ header img{
 /*home*/
 section.slider{
     margin: 0 auto;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     padding: 0 !important;
     overflow: hidden;
     z-index: 1;
+    
 
 }
 
@@ -143,6 +144,7 @@ section.slider{
     width: 400%;
     height: auto;
     display: flex;
+    
 }
 
 .slider-content input{
@@ -250,4 +252,104 @@ section.slider{
     cursor: pointer;
 }
 
+
+
 /*home*/
+
+/*login*/
+.login{
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f7f4f4;
+}
+
+.login img{
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.login div{
+    background-color: #fff;
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.login div form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login div form input{
+    height: 50px;
+    width: 300px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+/*login*/
+
+/*painel*/
+.painel{
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f7f4f4;
+}
+
+.painel div{
+    background-color: #fff;
+    height: 600px;
+    width: 900px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.painel div form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.painel div form input{
+    height: 50px;
+    width: 600px;
+    border-radius: 4px;
+    margin: 10px 0 10px 0;
+}
+
+.painel div form #texto{
+    height: 350px;
+}
+
+.painel div form #enviar{
+    width: 200px;
+    background-color:#4e4e4e;
+    color: #fff;
+}
+
+.painel div form textarea{
+    width: 600px;
+    height: 300px;
+}
+
+
+
+/*painel*/

@@ -1,5 +1,5 @@
 <div class="rodape">
-    <p>©2024 <a href="https://diegofarias.online">Diego Farias</a>- Todos os direitos reservados.</p>
+    <p>©2024 <a href="https://diegofarias.online">Diego Farias </a>- Todos os direitos reservados.</p>
     
 
 </div>
