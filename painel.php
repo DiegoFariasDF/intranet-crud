@@ -3,8 +3,8 @@
 <div class="painel">
 
     <?php
-        include 'vac.php'; // Verifique se os caminhos para os arquivos estão corretos
-        include 'db.php';  // Verifique se os caminhos para os arquivos estão corretos
+        include 'vac.php'; 
+        include 'db.php';  
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verifica se o formulário foi submetido via POST
@@ -33,6 +33,12 @@
 
     <div>
         <h3>Painel Comunicação</h3>
+
+        <div class="mini-painel">
+            <strong><a href="http://localhost/cursophp/intranet-crud/index.php?pagina=painel"><img src="uploads/adicionar.png"></a></strong>
+            <a href="?pagina=painel-editar"><img src="uploads/editar.png"></a>
+            <a href="?pagina=painel-deletar"><img src="uploads/remover.png"></a>
+        </div>
         
         
 

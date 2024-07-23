@@ -6,6 +6,7 @@
     <title>Intranet</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="slide.js" defer></script>
+    <script src="func.js"></script>
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
                 </ul>
             </li>
             <li><a href="?pagina=documentos">DOCUMENTOS</a></li>
-            <li><a href="">ARQUIVOS</a></li>    
+            <li><a href="?pagina=arquivos">ARQUIVOS</a></li>    
             <li><a href="?pagina=sobre">SOBRE</a></li>
             <li><a href="?pagina=login"><img src="uploads/usuario-branco.png"></a></li>
             </ul>

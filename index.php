@@ -19,6 +19,7 @@
     switch ($pagina){
         case "comunicacao": include("views/comunicacao.php"); break;
         case "documentos": include("views/documentos.php"); break;
+        case "arquivos": include("views/arquivos.php"); break;
         case "sobre": include("views/sobre.php"); break;
         case "gepe": include("views/gepe.php"); break;
         case "obras": include("views/obras.php"); break;
@@ -26,6 +27,8 @@
         case "uti": include("views/uti.php"); break;
         case "login": include("login.php"); break;
         case "painel": include("painel.php"); break;
+        case "painel-editar": include("painel-editar.php"); break;
+        case "painel-deletar": include("painel-deletar.php"); break;
         default: include("views/home.php"); break;
     }       
 
