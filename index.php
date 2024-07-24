@@ -19,6 +19,8 @@
     switch ($pagina){
         case "comunicacao": include("views/comunicacao.php"); break;
         case "documentos": include("views/documentos.php"); break;
+        case "documentos-gp": include("views/documentos-gp.php"); break;
+        case "documentos-ti": include("views/documentos-ti.php"); break;
         case "arquivos": include("views/arquivos.php"); break;
         case "sobre": include("views/sobre.php"); break;
         case "gepe": include("views/gepe.php"); break;

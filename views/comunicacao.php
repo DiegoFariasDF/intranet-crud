@@ -6,8 +6,9 @@
         $consulta = mysqli_query($conexao,"SELECT * FROM comunica");
 
         while ($linha = mysqli_fetch_array( $consulta )) {
-            echo $linha['titulo'];
-            echo $linha['texto'];
+            
+            echo "<h3>".$linha['titulo']."</h3>";
+            echo "<p>".$linha['texto']."</p>";
         }
         ?>
     <div>

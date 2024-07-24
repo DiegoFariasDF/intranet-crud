@@ -5,47 +5,63 @@
         <h3>Acesse sua Conta</h3>
 
         <form method="post" action="">
-            <input type="text" name="usuario" placeholder="Nome de usuario:">
-            <input type="password" name="senha" placeholder="Digite a senha:">
+            <input type="text" name="usuario" placeholder="Nome de usuário">
+            <input type="password" name="senha" placeholder="Digite a senha">
             <input type="submit" value="Entrar">
         </form>
         
-
         <?php 
-            include ('db.php');
+        
+        include ('db.php');
 
-            if (isset($_POST['usuario']) && isset($_POST['senha'])) {
-                if(strlen($_POST['usuario']) == 0){
-                    echo "Preencha seu usuario";
-                }
-                elseif(strlen($_POST['senha']) == 0){
-                    echo "Preencha sua senha";
-                }
-                else{
-                    $usuario = $conexao->real_escape_string($_POST['usuario']);
-                    $senha = $conexao->real_escape_string($_POST['senha']);
+        
+        if (isset($_POST['usuario']) && isset($_POST['senha'])) {
+            
+            if(strlen($_POST['usuario']) == 0){
+                echo "Preencha seu usuário";
+            }
+            elseif(strlen($_POST['senha']) == 0){
+                echo "Preencha sua senha";
+            }
+            else {
+                
+                $usuario = $conexao->real_escape_string($_POST['usuario']);
+                $senha = $conexao->real_escape_string($_POST['senha']);
 
-                    $sql_code = "SELECT * FROM usuarios WHERE usuario = '$usuario' and login = '$senha'";
-                    $sql_query = $conexao->query($sql_code) or die("Falha na execução do código SQL");
+                
+                $sql_code = "SELECT * FROM usuarios WHERE usuario = ?";
+                $stmt = $conexao->prepare($sql_code);
+                $stmt->bind_param("s", $usuario);
+                $stmt->execute();
+                $result = $stmt->get_result();
 
-                    $quantidade = $sql_query->num_rows;
+                
+                if($result->num_rows == 1){
+                    $usuario = $result->fetch_assoc();
 
-                    if($quantidade == 1){
+                    // criptografia da senha
+                    if(password_verify($senha, $usuario['login'])){
                         
-                        $usuario = $sql_query->fetch_assoc();
-                        if(!isset($_SESSION)){
-                            session_start();
-                        }
-                            
+                        session_start();
+
+                        
                         $_SESSION['id'] = $usuario['id'];
                         $_SESSION['nome'] = $usuario['nome'];
 
-                        header("location:index.php?pagina=painel");
+                        
+                        header("location: index.php?pagina=painel");
+                        exit; 
                     } else {
-                        echo "Falha ao logar";
+                        echo "Usuario/senha invalida";
                     }
+                } else {
+                    echo "Usuario/senha invalida";
                 }
+
+                
+                $stmt->close();
             }
+        }
         ?>
     </div>
 </div>

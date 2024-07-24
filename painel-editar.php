@@ -7,10 +7,9 @@
         // Verifica se houve envio do formulário
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';
-            $titulo_bruto = isset($_POST['titulo']) ? mysqli_real_escape_string($conexao, $_POST['titulo']) : '';
-            $texto_bruto = isset($_POST['texto']) ? mysqli_real_escape_string($conexao, $_POST['texto']) : '';
-            $titulo = "<h3>".$titulo_bruto."</h3>";
-            $texto =   "<p>".$texto_bruto."</p>";
+            $titulo = isset($_POST['titulo']) ? mysqli_real_escape_string($conexao, $_POST['titulo']) : '';
+            $texto = isset($_POST['texto']) ? mysqli_real_escape_string($conexao, $_POST['texto']) : '';
+           
 
             // Query SQL corrigida
             $query = "UPDATE COMUNICA SET titulo = '$titulo', texto = '$texto' WHERE POST = '$npost'";

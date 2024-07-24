@@ -1,4 +1,4 @@
-<div class="documentos">
+<div class="arquivos">
     <div class="container" id="fotos">
         <div class="gallery">
             <figure class="gallery__item gallery__item--1">

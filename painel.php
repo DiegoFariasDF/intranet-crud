@@ -10,11 +10,10 @@
             // Verifica se o formulário foi submetido via POST
 
             // Captura e limpa os dados do formulário
-            $titulo_bruto = mysqli_real_escape_string($conexao, $_POST['titulo']);
-            $texto_bruto = mysqli_real_escape_string($conexao, $_POST['texto']);
+            $titulo = mysqli_real_escape_string($conexao, $_POST['titulo']);
+            $texto = mysqli_real_escape_string($conexao, $_POST['texto']);
 
-            $titulo = "<h3>".$titulo_bruto."</h3>";
-            $texto =   "<p>".$texto_bruto."</p>";
+            
             
 
             // Monta a query SQL corretamente
@@ -42,10 +41,9 @@
         
         
 
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             <input type="text" name="titulo" placeholder="Título" required>
             <textarea type="text" name="texto" placeholder="Digite o seu artigo"></textarea required>
-            <!-- <input type="text" name="texto" id="texto" placeholder="Digite o seu artigo"> -->
             <input type="submit" id="enviar" value="Enviar">
         </form>
         <p><a href="sair.php">Sair</a></p>
