@@ -29,6 +29,9 @@
         case "uti": include("views/uti.php"); break;
         case "login": include("login.php"); break;
         case "painel": include("painel.php"); break;
+        case "painel-comu-arq": include("views/painel-comu-arq.php"); break;
+        case "painel-comu-arq-editar": include("views/painel-comu-arq-editar.php"); break;
+        case "painel-comu-arq-deletar": include("views/painel-comu-arq-deletar.php"); break;
         case "painel-editar": include("painel-editar.php"); break;
         case "painel-deletar": include("painel-deletar.php"); break;
         default: include("views/home.php"); break;

@@ -309,12 +309,13 @@ section.slider{
 
 /*painel*/
 .painel{
-    height: 87vh;
+    min-height: 87vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: #f7f4f4;
+    gap: 50px;
 }
 
 .painel div{
@@ -548,17 +549,35 @@ section.slider{
 
 /*comunica*/
 
-.comunica{
+.comunica{    
     text-align: justify;
 }
 
+.textos{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.comunicaum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comunicaum img{
+    padding: 0px 250px 30px 250px;
+    max-height: 80vh;
+    max-width: 100vh;
+}
+ 
 .comunica h3{
     text-align: center;
     padding: 30px 0 0 0;
 }
 
 .comunica p{
-    padding: 10px 200px 150px 200px;
+    padding: 10px 200px 30px 200px;
 }
 
 
@@ -566,7 +585,7 @@ section.slider{
 /*documentos*/
 
 .documentos{
-    height: 87vh;
+    min-height: 87vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -644,3 +663,9 @@ section.slider{
 }
 
 /*fim de documentos*/
+
+.separa{
+    height: 2px;
+    width: 80%;
+    background-color: #4e4e4e49;
+}
