@@ -48,9 +48,22 @@
                         $_SESSION['id'] = $usuario['id'];
                         $_SESSION['nome'] = $usuario['nome'];
 
+                        if ($_SESSION['nome'] == "teste"){
+                            header("location: index.php?pagina=painel");
+                            exit; 
+                        }
+                        elseif ($_SESSION["nome"] == "ti"){
+                            header("location: index.php?pagina=painel-ti");
+                            exit; 
+                        }
+                        elseif ($_SESSION["nome"] == "rh"){
+                            header("location: index.php?pagina=painel-rh-arq");
+                            exit; 
+                        }
+
+
                         
-                        header("location: index.php?pagina=painel");
-                        exit; 
+                       
                     } else {
                         echo "Usuario/senha invalida";
                     }
