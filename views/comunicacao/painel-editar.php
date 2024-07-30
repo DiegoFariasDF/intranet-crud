@@ -9,6 +9,7 @@
             $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';
             $titulo = isset($_POST['titulo']) ? mysqli_real_escape_string($conexao, $_POST['titulo']) : '';
             $texto = isset($_POST['texto']) ? mysqli_real_escape_string($conexao, $_POST['texto']) : '';
+            $tabela = "comunica";
            
 
             // Query SQL corrigida
@@ -22,6 +23,30 @@
             }
         }
     ?>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input[name='post']").blur(function() {
+                var $tituloac = $("input[name='titulo']");
+                var $textoac = $("textarea[name='texto']"); // Corrigido para textarea
+                var postValue = $(this).val();
+                
+                $.getJSON('function-edit-comunica.php', { post: postValue }, function(json) {
+                    console.log('Resposta do servidor:', json); // Depuração
+                    if (json.titulo) {
+                        $tituloac.val(json.titulo);
+                        $textoac.val(json.texto);
+                    } else {
+                        $tituloac.val('');
+                        $textoac.val('');
+                        alert('Post não encontrado.');
+                    }
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.error('Erro na requisição AJAX:', textStatus, errorThrown); // Depuração
+                });
+            });
+        });
+    </script>
 
     <div>
         <h3>Painel Comunicação</h3>
