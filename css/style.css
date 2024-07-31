@@ -6,6 +6,8 @@
 
 body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* fonte do g1 - font-family: 'Globotipo Variable', 'Globotipo', 'Globotipo UI', 'Globotipo Display', 'Globotipo Book', Avenir, Ubuntu, -apple-system, system-ui, BlinkMacSystemFont, sans-serif;*/
+
 }
 
 header{
@@ -563,6 +565,7 @@ section.slider{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .comunicaum img{
@@ -574,11 +577,22 @@ section.slider{
 .comunica h3{
     text-align: center;
     padding: 30px 0 0 0;
+    font-size: 25px;
 }
 
 .comunica p{
-    padding: 10px 200px 30px 200px;
+    padding: 10px 400px 30px 400px;
+    font-size: 20px
 }
+
+.comunica c{
+    width: 88vh;
+    font-size: 12px;
+    display: flex;
+    text-align: end;
+    justify-content: end;
+}
+
 
 
 
@@ -669,3 +683,7 @@ section.slider{
     width: 80%;
     background-color: #4e4e4e49;
 }
+
+
+
+

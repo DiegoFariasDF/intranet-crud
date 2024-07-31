@@ -21,6 +21,8 @@
                 echo "<a href=\"".$linha["path"]."\"><img src=\"uploads/manual.png\" alt=\"Manual\"></a>";
             }
             
+            echo "<c>Post nº".$linha['post']." Postado em:".$linha['data_upload']."</c>";
+
             echo "</div>";
 
             echo "<div class=\"separa\"> </div>";
