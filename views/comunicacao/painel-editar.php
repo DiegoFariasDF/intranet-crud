@@ -17,9 +17,9 @@
             
             // Executa a query
             if (mysqli_query($conexao, $query)) {
-                echo "Registro atualizado com sucesso.";
+                $mensagem = "Registro atualizado com sucesso.";
             } else {
-                echo "Erro ao atualizar registro: " . mysqli_error($conexao);
+                $mensagem =  "Erro ao atualizar registro: " . mysqli_error($conexao);
             }
         }
     ?>
@@ -48,7 +48,19 @@
         });
     </script>
 
-    <div>
+    <div class="menulateral">
+        <div><h2>Painel Comunicação</h2></div>
+        <div class="menulateral1">     
+            <strong><a href="?pagina=painel"><img src="uploads/shared-post.png">Posts</a></strong>
+            <a href="?pagina=painel-comu-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a>
+            <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
+                
+        </div>
+
+    </div>
+
+
+    <div class="caixapainel">
         <h3>Painel Comunicação</h3>
 
         <div class="mini-painel">
@@ -63,7 +75,7 @@
             <textarea name="texto" placeholder="Texto" required></textarea>
             <input type="submit" id="enviar" value="Enviar">
         </form>
-        <p><a href="sair.php">Sair</a></p>
-
+        
+        <div> <?php  echo $mensagem;?></div>
     </div>
 </div>

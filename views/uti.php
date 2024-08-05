@@ -1,9 +1,15 @@
 <div class="comunica">
+
+    <div class="textotopo">
+        <img src="uploads/header-uti.png" alt="">
+    </div>
+
     <div class="textos">
         <?php 
         include("db.php");
 
         $consulta = mysqli_query($conexao, "SELECT * FROM ti");
+
 
         while ($linha = mysqli_fetch_array($consulta)) {
 

@@ -314,13 +314,11 @@ section.slider{
     min-height: 87vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
     background-color: #f7f4f4;
-    gap: 50px;
+    gap: 300px;
 }
 
-.painel div{
+.painel .caixapainel{
     background-color: #fff;
     height: auto;
     width: 900px;
@@ -333,42 +331,43 @@ section.slider{
 }
 
 
-.painel div form{
+.painel .caixapainel form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.painel div form input{
+.painel .caixapainel form input{
     height: 50px;
     width: 600px;
     border-radius: 4px;
     margin: 10px 0 10px 0;
 }
 
-.painel div form #texto{
+.painel .caixapainel form #texto{
     height: 350px;
 }
 
-.painel div form #enviar{
+.painel .caixapainel form #enviar{
     width: 200px;
     background-color:#4e4e4e;
     color: #fff;
 }
 
-.painel div form textarea{
+.painel .caixapainel form textarea{
     width: 600px;
     height: 300px;
 }
 
-.painel div .mini-painel{
+.mini-painel{
     display: flex;
     flex-direction: row;
     align-items: center;
     box-shadow: none;
+    justify-content: space-around;
 }
 
-.painel div .mini-painel strong{ 
+.mini-painel strong{ 
     background-color: #00000018;
     width: 100px;
     height: 50px;
@@ -682,6 +681,63 @@ section.slider{
     height: 2px;
     width: 80%;
     background-color: #4e4e4e49;
+}
+
+
+.textotopo{
+    
+    height: 55vh;
+    padding: 30px 150px 30px 150px;
+}
+
+.textotopo img{
+    height: 500px;
+    width: 100%;
+    
+}
+
+.menulateral{
+    height: 86vh;
+    width: 30vh;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px #000;
+    text-align: center;
+       
+}
+
+
+.menulateral strong{
+    background-color: #afafaf;
+    border-radius: 10px;
+    
+}
+
+
+
+.menulateral1{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 20px;
+    gap: 20px;
+    position: relative;
+    top: 50px;
+}
+
+.menulateral1 a{
+    text-decoration: none;
+    font-size: 22px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px 0 5px 0;
+}
+
+.menulateral1 a:hover{
+    background-color: #e6e2e2;
+    border-radius: 10px;
 }
 
 

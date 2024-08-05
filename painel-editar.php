@@ -38,7 +38,7 @@
             <textarea name="texto" placeholder="Texto" required></textarea>
             <input type="submit" id="enviar" value="Enviar">
         </form>
-        <p><a href="sair.php">Sair</a></p>
+        
 
     </div>
 </div>

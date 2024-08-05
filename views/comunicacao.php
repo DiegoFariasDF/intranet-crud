@@ -1,5 +1,11 @@
 <div class="comunica">
+
+    <div class="textotopo">
+        <img src="uploads/header-comunica.png" alt="">
+    </div>
+
     <div class="textos">
+
         <?php 
         include("db.php");
 

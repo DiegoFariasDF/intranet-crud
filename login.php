@@ -49,15 +49,15 @@
                         $_SESSION['nome'] = $usuario['nome'];
 
                         if ($_SESSION['nome'] == "teste"){
-                            header("location: index.php?pagina=painel");
+                            header("location:?pagina=painel");
                             exit; 
                         }
                         elseif ($_SESSION["nome"] == "ti"){
-                            header("location: index.php?pagina=painel-ti");
+                            header("location:?pagina=painel-ti");
                             exit; 
                         }
                         elseif ($_SESSION["nome"] == "rh"){
-                            header("location: index.php?pagina=painel-rh-arq");
+                            header("location:?pagina=painel-rh-arq");
                             exit; 
                         }
 

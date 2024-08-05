@@ -2,76 +2,83 @@
     <?php
     include 'vac.php'; 
     include 'db.php';  
-            //Config de arquivos relacionado aos documentos de downloads comunicação
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                
-                // Variável para o diretório de upload
-                $pasta = "uploads/arquivos/";
 
-                // Upload de arquivo
-                if(isset($_FILES['form-comunicacao'])){
-                    $arquivo = $_FILES['form-comunicacao'];
-                    
-                    if($arquivo['error']){
-                        echo 'Erro ao enviar o arquivo';
-                    } elseif($arquivo['size'] > 2097152) {
-                        echo 'Arquivo muito grande (max 2mb)';
+    
+    $mensagem = '';
+
+    // Config de arquivos relacionado aos documentos de downloads comunicação
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Variável para o diretório de upload
+        $pasta = "uploads/arquivos/";
+
+        // Upload de arquivo
+        if (isset($_FILES['form-comunicacao'])) {
+            $arquivo = $_FILES['form-comunicacao'];
+            
+            if ($arquivo['error']) {
+                $mensagem = 'Erro ao enviar o arquivo.';
+            } elseif ($arquivo['size'] > 2097152) {
+                $mensagem = 'Arquivo muito grande (max 2mb).';
+            } else {
+                $nomeDoArquivo = $arquivo['name'];
+                $nomeDoArquivoNew = uniqid();
+                $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+                if (!in_array($extensao, ['pdf', 'doc', 'xlsx', 'pptx', 'zip'])) {
+                    $mensagem = 'Tipo de arquivo não aceito.';
+                } else {
+                    $arquivo_salvo = move_uploaded_file($arquivo["tmp_name"], $pasta.$nomeDoArquivoNew.".".$extensao);
+                    if ($arquivo_salvo) {
+                        $url_arquivo = "http://localhost/cursophp/intranet-crud/index.php?pagina=documentos";
+                        $mensagem = "Arquivo enviado com sucesso: <a href=\"$url_arquivo\">$nomeDoArquivoNew.$extensao</a>";
                     } else {
-                        $nomeDoArquivo = $arquivo['name'];
-                        $nomeDoArquivoNew = uniqid();
-                        $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
-
-                        if($extensao != "pdf" && $extensao != "doc" && $extensao != "xlsx" && $extensao != "pptx" && $extensao != "zip"){
-                            echo "Tipo de arquivo não aceito";
-                        } else {
-                            $arquivo_salvo = move_uploaded_file($arquivo["tmp_name"], $pasta.$nomeDoArquivoNew.".".$extensao);
-                            if($arquivo_salvo){
-                                $url_arquivo = "http://localhost/cursophp/intranet-crud/index.php?pagina=documentos";
-                                echo "<p>Arquivo enviado com sucesso: <a href=\"$url_arquivo\">$nomeDoArquivoNew.$extensao</a></p>";
-                            } else {
-                                echo "<p>Falha ao enviar o arquivo</p>";
-                            }
-                        }
+                        $mensagem = 'Falha ao enviar o arquivo.';
                     }
                 }
-            
-                // Se um arquivo foi enviado, monte a string para o banco de dados
-                $path_arquivo = isset($nomeDoArquivoNew) && isset($extensao) ? "$pasta$nomeDoArquivoNew.$extensao" : '';
-
-                // Inserir no banco de dados
-                $query = "INSERT INTO tidownloads (nome, origem) VALUES ('$nomeDoArquivo', '$path_arquivo')";
-
-                // Executa a query
-                $executar = mysqli_query($conexao, $query);
-                
-                if ($executar) {
-                    echo "Inserção realizada com sucesso!";
-                } else {
-                    echo "Erro na inserção: " . mysqli_error($conexao);
-                }          
             }
-        
-        ?>
-        
-        
-        <div>
-            <h3>Formularios ti</h3>
+        }
+    
+        // Se um arquivo foi enviado, monte a string para o banco de dados
+        $path_arquivo = isset($nomeDoArquivoNew) && isset($extensao) ? "$pasta$nomeDoArquivoNew.$extensao" : '';
 
-            <div class="mini-painel">
-                <a href="?pagina=painel-ti">Ti Posts</a>
-                <a href="?pagina=painel-ti-arq">Ti Arquivos</a>
-            </div>
+        // Inserir no banco de dados
+        $query = "INSERT INTO tidownloads (nome, origem) VALUES ('$nomeDoArquivo', '$path_arquivo')";
 
-            <div class="mini-painel">
-                <strong><a href="?pagina=painel-ti-arq"><img src="uploads/adicionar.png"></a></strong>
-                <a href="?pagina=painel-ti-arq-editar"><img src="uploads/editar.png"></a>
-                <a href="?pagina=painel-ti-arq-deletar"><img src="uploads/remover.png"></a>
-            </div>
+        // Executa a query
+        $executar = mysqli_query($conexao, $query);
+        
+        if ($executar) {
+            $mensagem .= " Inserção realizada com sucesso!";
+        } else {
+            $mensagem .= " Erro na inserção: " . mysqli_error($conexao);
+        }
+    }
+    ?>
 
-            
-            <form method="post" action="" enctype="multipart/form-data">
-                <input type="file" name="form-comunicacao" id="">
-                <input type="submit" id="enviar" value="Enviar">
-            </form>
+    <div class="menulateral">
+        <div><h2>Painel Comunicação</h2></div>
+        <div class="menulateral1">  
+            <a href="?pagina=painel-ti"><img src="uploads/shared-post.png">Posts</a>
+            <strong><a href="?pagina=painel-ti-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
+            <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
         </div>
+    </div>
+    
+    <div class="caixapainel">
+        <h3>Formulários TI</h3>
+
+        <div class="mini-painel">
+            <strong><a href="?pagina=painel-ti-arq"><img src="uploads/adicionar.png"></a></strong>
+            <a href="?pagina=painel-ti-arq-editar"><img src="uploads/editar.png"></a>
+            <a href="?pagina=painel-ti-arq-deletar"><img src="uploads/remover.png"></a>
+        </div>
+
+        <form method="post" action="" enctype="multipart/form-data">
+            <input type="file" name="form-comunicacao" id="">
+            <input type="submit" id="enviar" value="Enviar">
+        </form>
+
+        
+        <div><?php echo $mensagem; ?></div>
+    </div>
 </div>

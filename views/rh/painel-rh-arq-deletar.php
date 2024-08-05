@@ -3,16 +3,18 @@
         include 'vac.php'; 
         include 'db.php';  
 
+        $mensagem = '';
+
         $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';
 
         if(!empty($npost)) {
             if(mysqli_query($conexao, "DELETE FROM rhdownloads WHERE id = '$npost'")){
-                echo 'Apagado com sucesso';
+                $mensagem = 'Apagado com sucesso';
             } else {
-                echo 'Falha ao apagar dados';
+                $mensagem = 'Falha ao apagar dados';
             }
         } else {
-            echo '';
+            $mensagem = '';
         }
 
         
@@ -20,8 +22,20 @@
 
     ?>
         
+        <div class="menulateral">
+            <div><h2>Painel Comunicação</h2></div>
+            <div class="menulateral1">  
+
+                
+                <strong><a href="?pagina=painel-rh-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
+                <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
+                
+            </div>
+
+        </div>
         
-        <div>
+        
+        <div class="caixapainel">
             <h3>Formularios RH</h3>
 
             <div class="mini-painel">
@@ -35,5 +49,7 @@
                 <input type="number" name="post" placeholder="Qual o numero do arquivo?" required>
                 <input type="submit" id="enviar" value="Enviar">
             </form>
+
+            <div><?php echo $mensagem;?></div>
         </div>
 </div>

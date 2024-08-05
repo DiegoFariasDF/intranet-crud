@@ -36,7 +36,7 @@
             <input type="number" name="post" placeholder="Qual o numero do post?" required>
             <input type="submit" id="enviar" value="Enviar">
         </form>
-        <p><a href="sair.php">Sair</a></p>
+        
 
         
     </div>

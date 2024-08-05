@@ -4,16 +4,18 @@
         include 'vac.php'; 
         include 'db.php';  
 
+        $mensagem = '';
+
         $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';
 
         if(!empty($npost)) {
             if(mysqli_query($conexao, "DELETE FROM comunica WHERE post = '$npost'")){
-                echo 'Apagado com sucesso';
+                $mensagem = 'Apagado com sucesso';
             } else {
-                echo 'Falha ao apagar dados';
+                $mensagem = 'Falha ao apagar dados';
             }
         } else {
-            echo '';
+            $mensagem = '';
         }
 
         
@@ -21,7 +23,20 @@
 
     ?>
 
-    <div>
+    <div class="menulateral">
+        <div><h2>Painel Comunicação</h2></div>
+        <div class="menulateral1">  
+
+                
+                <strong><a href="?pagina=painel-ti"><img src="uploads/shared-post.png">Posts</a></strong>
+                <a href="?pagina=painel-ti-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a>
+                <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
+                
+        </div>
+
+    </div>
+
+    <div class="caixapainel">
         <h3>Painel TI</h3>
 
         <div class="mini-painel">
@@ -36,8 +51,8 @@
             <input type="number" name="post" placeholder="Qual o numero do post?" required>
             <input type="submit" id="enviar" value="Enviar">
         </form>
-        <p><a href="sair.php">Sair</a></p>
-
+        
+        <div> <?php echo $mensagem;?></div>
         
     </div>
 </div>

@@ -43,7 +43,7 @@ elseif ($_SESSION['nome'] == "rh" && (
 
 if (!$pagina_permitida) {
     // Se não tiver permissão para acessar esta página, redireciona para uma página de erro ou para o painel principal
-    die("Você não tem permissão para fazer alterações nesse painel  <a href=\"http://localhost/cursophp/intranet-crud/index.php?pagina=login\">Entrar</a>");
+    die("Você não tem permissão para fazer alterações nesse painel  <a href=\"?pagina=login\">Entrar</a>");
 }
 
 
