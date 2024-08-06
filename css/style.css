@@ -19,14 +19,15 @@ header{
     padding: 0 50px 0 50px;
     z-index: 10;
     width: 100%;
+    
 }
+
+
 
 ul {
     list-style: none;
     display: flex;
     align-items: center;
-    
-    
 }
 
 ul li {
@@ -365,6 +366,7 @@ section.slider{
     align-items: center;
     box-shadow: none;
     justify-content: space-around;
+    
 }
 
 .mini-painel strong{ 
@@ -743,3 +745,57 @@ section.slider{
 
 
 
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+#customers tr:hover {background-color: #ddd;}
+  
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #002e53;
+    color: white;
+}
+
+
+
+
+
+/* inico das imagens gif download*/
+
+.gif-container {
+    position: relative;
+    display: inline-block;
+}
+  
+.gif-static {
+    display: block;
+}
+  
+.gif-animated {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+  
+.gif-container:hover .gif-static {
+    display: none;
+}
+  
+.gif-container:hover .gif-animated {
+    display: block;
+}
+  
+ /*fim das imagens gif download */

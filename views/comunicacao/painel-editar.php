@@ -4,6 +4,7 @@
         include 'vac.php'; 
         include 'db.php';  
 
+        $mensagem = "";
         // Verifica se houve envio do formulário
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';

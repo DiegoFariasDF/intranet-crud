@@ -2,17 +2,20 @@
     <div>
         <h3>DOCUMENTOS</h3>
 
-        <div class="mini-painel">
-            <strong><a href="?pagina=documentos">Comunicação</a></strong>
-            <a href="?pagina=documentos-gp">Gestão de Pessoas</a>
-            <a href="?pagina=documentos-ti">Tecnologia da Informação</a>
-        </div>        
+        <ul class="mini-painel">
+            <li><strong><a href="?pagina=documentos">Comunicação</a></strong></li>
+            <li><a href="?pagina=documentos-gp">Gestão de Pessoas</a></li>
+            <li><a href="?pagina=documentos-ti">Tecnologia da Informação</a></li>
+            
+            
+            
+        </ul>        
 
-        <table>
+        <table id="customers">
             <tr>
-                <td>Nº Do Arquivo</td>
-                <td>Arquivo</td>
-                <td>Download</td>
+                <th>Nº Do Arquivo</th>
+                <th>Arquivo</th>
+                <th>Download</th>
             </tr>
             
             <?php 
@@ -31,16 +34,17 @@
 
                 // Exibe de acordo com o tipo de arquivo
                 if ($extensao == "pdf" || $extensao == "png") {
-                    echo "<td><a href=\"" . $linha['origem'] . "\">Download</a></td>";
+                    echo "<td><a href=\"" . $linha['origem'] . "\"><img src=\"uploads/baixar.png\"></a></td>";
                 } elseif ($extensao == "pdf") {
-                    echo "<td><a href=\"" . $linha['origem'] . "\">Download</a></td>";
+                    echo "<td><a href=\"" . $linha['origem'] . "\"><img src=\"uploads/baixar.png\"></a></td>";
                 } else {
-                    echo "<td><a href=\"" . $linha['origem'] . "\">Download</a></td>";
+                    echo "<td><a href=\"" . $linha['origem'] . "\"><img src=\"uploads/baixar.png\"></a></td>";
                 }
 
                 echo "</tr>";
             }
             ?>
         </table>
+        
     </div>
 </div>
