@@ -8,7 +8,7 @@
         $npost = isset($_POST['post']) ? mysqli_real_escape_string($conexao, $_POST['post']) : '';
 
         if(!empty($npost)) {
-            if(mysqli_query($conexao, "DELETE FROM rhdownloads WHERE id = '$npost'")){
+            if(mysqli_query($conexao, "DELETE FROM lcdownloads WHERE id = '$npost'")){
                 $mensagem = 'Apagado com sucesso';
             } else {
                 $mensagem = 'Falha ao apagar dados';
@@ -23,12 +23,12 @@
     ?>
         
         <div class="menulateral">
-            <div><h2>Painel Comunicação</h2></div>
+            <div><h2>Painel Licitação e Compras</h2></div>
             <div class="menulateral1">  
 
                 
-                <a href="?pagina=painel-rh"><img src="uploads/shared-post.png">Posts</a>
-                <strong><a href="?pagina=painel-rh-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
+                <a href="?pagina=painel-lc"><img src="uploads/shared-post.png">Posts</a>
+                <strong><a href="?pagina=painel-lc-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
                 <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
                 
             </div>
@@ -37,11 +37,11 @@
         
         
         <div class="caixapainel">
-            <h3>Formularios RH</h3>
+            <h3>Formularios Licitação e Compras</h3>
 
             <div class="mini-painel">
-                <a href="?pagina=painel-rh-arq"><img src="uploads/adicionar.png"></a>
-                <a href="?pagina=painel-rh-arq-editar"><img src="uploads/editar.png"></a>
+                <a href="?pagina=painel-lc-arq"><img src="uploads/adicionar.png"></a>
+                <a href="?pagina=painel-lc-arq-editar"><img src="uploads/editar.png"></a>
                 <strong><a href="?pagina=painel-rh-arq-deletar"><img src="uploads/remover.png"></a></strong>
             </div>
 

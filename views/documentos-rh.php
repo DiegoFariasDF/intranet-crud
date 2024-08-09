@@ -4,8 +4,8 @@
 
         <ul class="mini-painel">
             <li><a href="?pagina=documentos">Comunicação</a></li>
-            <li><a href="?pagina=documentos-gp">Gestão de Pessoas</a></li>
-            <li><strong><a href="?pagina=documentos-ti">Tecnologia da Informação</a></strong></li>
+            <li><strong><a href="?pagina=documentos-gp">Gestão de Pessoas</a></strong></li>
+            <li><a href="?pagina=documentos-ti">Tecnologia da Informação</a></li>
             <li><a href="?pagina=documentos-lc">Licitação e Compras</a></li>
         </ul>        
 
@@ -19,7 +19,7 @@
             <?php 
             include("db.php");
 
-            $consulta = mysqli_query($conexao, "SELECT * FROM tidownloads");
+            $consulta = mysqli_query($conexao, "SELECT * FROM rhdownloads");
 
             while ($linha = mysqli_fetch_array($consulta)) {
                 echo "<tr>";

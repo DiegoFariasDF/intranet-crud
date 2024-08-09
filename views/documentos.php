@@ -6,6 +6,7 @@
             <li><strong><a href="?pagina=documentos">Comunicação</a></strong></li>
             <li><a href="?pagina=documentos-gp">Gestão de Pessoas</a></li>
             <li><a href="?pagina=documentos-ti">Tecnologia da Informação</a></li>
+            <li><a href="?pagina=documentos-lc">Licitação e Compras</a></li>
             
             
             

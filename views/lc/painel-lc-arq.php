@@ -42,7 +42,7 @@
         $path_arquivo = isset($nomeDoArquivoNew) && isset($extensao) ? "$pasta$nomeDoArquivoNew.$extensao" : '';
 
         // Inserir no banco de dados
-        $query = "INSERT INTO rhdownloads (nome, origem) VALUES ('$nomeDoArquivo', '$path_arquivo')";
+        $query = "INSERT INTO lcdownloads (nome, origem) VALUES ('$nomeDoArquivo', '$path_arquivo')";
 
         // Executa a query
         $executar = mysqli_query($conexao, $query);
@@ -56,11 +56,11 @@
     ?>
 
         <div class="menulateral">
-            <div><h2>Painel Gestão de Pessoas</h2></div>
+            <div><h2>Painel Licitação e Compras</h2></div>
             <div class="menulateral1">  
 
-                <a href="?pagina=painel-rh"><img src="uploads/shared-post.png">Posts</a>
-                <strong><a href="?pagina=painel-rh-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
+                <a href="?pagina=painel-lc"><img src="uploads/shared-post.png">Posts</a>
+                <strong><a href="?pagina=painel-lc-arq"><img src="uploads/compartilhar-pasta.png"> Arquivos</a></strong>
                 <a href="sair.php"><img src="uploads/logout-arredondado.png"> Sair</a>
                 
             </div>
@@ -69,14 +69,14 @@
         
         
         <div class="caixapainel">
-            <h3>Formularios rh</h3>
+            <h3>Formularios Licitação e Compras</h3>
 
             
 
             <div class="mini-painel">
-                <strong><a href="?pagina=painel-rh-arq"><img src="uploads/adicionar.png"></a></strong>
-                <a href="?pagina=painel-rh-arq-editar"><img src="uploads/editar.png"></a>
-                <a href="?pagina=painel-rh-arq-deletar"><img src="uploads/remover.png"></a>
+                <strong><a href="?pagina=painel-lc-arq"><img src="uploads/adicionar.png"></a></strong>
+                <a href="?pagina=painel-lc-arq-editar"><img src="uploads/editar.png"></a>
+                <a href="?pagina=painel-lc-arq-deletar"><img src="uploads/remover.png"></a>
             </div>
 
             

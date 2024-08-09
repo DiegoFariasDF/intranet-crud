@@ -57,7 +57,11 @@
                             exit; 
                         }
                         elseif ($_SESSION["nome"] == "rh"){
-                            header("location:?pagina=painel-rh-arq");
+                            header("location:?pagina=painel-rh");
+                            exit; 
+                        }
+                        elseif ($_SESSION["nome"] == "lc"){
+                            header("location:?pagina=painel-lc");
                             exit; 
                         }
 

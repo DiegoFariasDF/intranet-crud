@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intranet</title>
+    <title>SAAE Intranet</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="slide.js" defer></script>
     <script src="func.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="icon" href="uploads/agua.png" type="image/png">
 </head>
 <body>
     <header>
@@ -19,6 +20,8 @@
                 <ul class="dropdown">
                     <li><a href="?pagina=comunicacao">COMUNICAÇÃO</a></li>
                     <li><a href="?pagina=uti">TECNOLOGIA DA INFORMAÇÃO</a></li>
+                    <li><a href="?pagina=rh">GESTÃO DE PESSOAS</a></li>
+                    <li><a href="?pagina=lc">LICITAÇÃO E COMPRAS</a></li>
                 </ul>
             </li>
             <li><a href="?pagina=documentos">DOCUMENTOS</a></li>

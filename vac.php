@@ -31,12 +31,23 @@ elseif ($_SESSION['nome'] == "ti" && (
     $pagina_permitida = true;
 }
 elseif ($_SESSION['nome'] == "rh" && (
-    $_GET['pagina'] == "painel-rh-arq" ||
+    $_GET['pagina'] == "painel-rh" ||
     $_GET['pagina'] == "painel-editar-rh" ||
     $_GET['pagina'] == "painel-deletar-rh" ||
     $_GET['pagina'] == "painel-rh-arq" ||
     $_GET['pagina'] == "painel-rh-arq-editar" ||
     $_GET['pagina'] == "painel-rh-arq-deletar"
+)) {
+    $pagina_permitida = true;
+}
+
+elseif ($_SESSION['nome'] == "lc" && (
+    $_GET['pagina'] == "painel-lc" ||
+    $_GET['pagina'] == "painel-editar-lc" ||
+    $_GET['pagina'] == "painel-deletar-lc" ||
+    $_GET['pagina'] == "painel-lc-arq" ||
+    $_GET['pagina'] == "painel-lc-arq-editar" ||
+    $_GET['pagina'] == "painel-lc-arq-deletar"
 )) {
     $pagina_permitida = true;
 }

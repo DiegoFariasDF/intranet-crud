@@ -1,15 +1,15 @@
 <div class="comunica">
 
     <div class="textotopo">
-        <img src="uploads/header-ugp.png" alt="">
+        <img src="uploads/header-lc.png" alt="">
     </div>
 
     <div class="textos">
+
         <?php 
         include("db.php");
 
-        $consulta = mysqli_query($conexao, "SELECT * FROM rh");
-
+        $consulta = mysqli_query($conexao, "SELECT * FROM lc");
 
         while ($linha = mysqli_fetch_array($consulta)) {
 
@@ -26,9 +26,9 @@
             } elseif ($extensao == "pdf") {
                 echo "<a href=\"".$linha["path"]."\"><img src=\"uploads/manual.png\" alt=\"Manual\"></a>";
             }
-            
-            echo "<c>Post nº".$linha['post']." Postado em:".$linha['data_upload']."</c>";
 
+            echo "<c>Post nº".$linha['post']." Postado em:".$linha['data_upload']."</c>";
+            
             echo "</div>";
 
             echo "<div class=\"separa\"> </div>";
